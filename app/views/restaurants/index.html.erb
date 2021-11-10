@@ -1,0 +1,15 @@
+<div class="container">
+  <% @restaurants.each do |restaurant| %>
+    <div class="card-trip">
+      <%= image_tag "https://source.unsplash.com/featured/?food-drink,#{restaurant.category}&#{rand(500)}" %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+          <p><%= restaurant.address %></p>
+          <p><%= restaurant.phone_number %></p>
+        </div>
+        <h2 class="card-trip-pricing"><strong><%= restaurant.category %></strong></h2>
+      </div>
+    </div>
+  <% end %>
+</div>
